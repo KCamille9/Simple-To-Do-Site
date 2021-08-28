@@ -19,7 +19,6 @@
     </form>
 
     <div class="controls">
-      <button v-on:click="showAll()">Show All</button>
       <button v-on:click="showActive()">Show Active</button>
       <button v-on:click="showCompleted()">Show Completed</button>
       <button v-on:click="deleteCompleted()">Delete Completed</button>
@@ -30,9 +29,7 @@
       <li v-for="item in filteredTodos" draggable="true" v-on:dragstart="dragItem(item)" v-on:dragover.prevent v-on:drop="dropItem(item)">
 
         <input type="checkbox" v-model="item.completed"/>
-        <label v-bind:class="{ completed: item.completed }">{{ item.title }}</label>
-        <button v-on:click="deleteItem(item)" class="delete">X</button>
-    
+        <label v-bind:class="{ completed2: item.completed }">{{ item.title }}</label>    
     
       </li>
     </ul>

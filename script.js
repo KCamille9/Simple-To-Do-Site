@@ -6,6 +6,10 @@ var app = new Vue({
         show: 'all',
         drag: {},
       },
+
+    beforeMount(){
+      this.show = 'active'
+    },
     
     mounted()
     {
@@ -13,6 +17,7 @@ var app = new Vue({
         .then(res => res.json())
         .then(data => this.todos = data)
         .catch(err => console.log(err.message))
+
     },
 
     computed: {
