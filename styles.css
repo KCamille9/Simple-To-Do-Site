@@ -11,7 +11,7 @@ ul {
     list-style: none;
 }
 
-li {
+/* li {
     background: #fff;
     width: 500px;
     min-height: 30px;
@@ -20,7 +20,47 @@ li {
     font-size: 1em;
     display: flex;
     align-items: center;
+} */
+
+.list-group-item {
+    position: relative;
+    display: block;
+    /* padding: .75rem 1.25rem; */
+    /* margin-bottom: -1px; */
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,.125);
 }
+
+
+/* ------------------ */
+
+
+
+li{
+    margin: 10px;
+  }
+  
+  .todo{
+    margin: auto;
+  }
+  
+  .hovero:hover{
+    background: black !important;
+  }
+  
+  .hovero:hover i{
+    color: white;
+  }
+  
+  .todo-item{
+    display: flex;
+    justify-content: space-between;
+  }
+  .addspace{margin-right: 5px;}
+  
+  
+
+
 
 .delete {
     display: none;

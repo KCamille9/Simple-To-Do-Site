@@ -3,6 +3,8 @@
 
 <head>
   <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
   <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css" />
   <title>Vue Todo</title>
@@ -26,16 +28,44 @@
 
 
     <ul>
-      <li v-for="item in filteredTodos" draggable="true" v-on:dragstart="dragItem(item)" v-on:dragover.prevent v-on:drop="dropItem(item)">
+      <li class="list-group-item" v-for="item in filteredTodos" draggable="true" v-on:dragstart="dragItem(item)" v-on:dragover.prevent v-on:drop="dropItem(item)">
 
-        <input type="checkbox" v-model="item.completed"/>
-        <label v-bind:class="{ completed2: item.completed }">{{ item.title }}</label>    
+        <!-- <input type="checkbox" v-model="item.completed"/>
+        <label v-bind:class="{ completed2: item.completed }">{{ item.title }}</label>    -->
+<!-- 
+        <div class="todo-item" style="display: flex; justify-content: space-between">
+          <div class="secondiv">
+            <p class="h4 myText">{{ item.title }}</p>
+          </div>
+          <div class="thirdiv">
+            <button class="btn btn-success addspace">Mark as completed</button>
+          </div>
+        </div> -->
+
+        <div class="row m-1 p-3">
+          <div class="col col-11 mx-auto">
+              <div class="row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-center">
+                  <div class="col">
+                    {{ item.title }}
+                  </div>
+                  
+                  <div class="col-auto px-0 mx-0 ">
+                      <button type="button" class="btn btn-primary" v-on:click="deleteItem(item)">Mark as completed</button>
+                  </div>
+
+              </div>
+          </div>
+        </div>
+        
     
       </li>
     </ul>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="/script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
 </html>

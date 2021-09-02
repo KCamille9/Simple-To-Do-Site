@@ -54,9 +54,21 @@ var app = new Vue({
         },
         deleteItem(item) {
             var index = this.todos.indexOf(item);
-            if (index > -1)
-              this.todos.splice(index,1);
-        },      
+
+            let opt = this.todos[index];
+            console.log(index, option);
+
+        },
+            
+
+        updateMessage() {
+          this.message = 'updated'
+          console.log(this.$el.textContent) // => 'not updated'
+          this.$nextTick(function () {
+            console.log(this.$el.textContent) // => 'updated'
+          })
+        },
+
         showActive() {
           this.show = 'active';
         },
